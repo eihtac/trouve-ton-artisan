@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "Graphik";
+    src: url(../assets/fonts/Graphik-Regular-Trial.woff) format("woff"),
+         url(../assets/fonts/Graphik-Regular-Trial.ttf) format("truetype"),
+         url(../assets/fonts/Graphik-Bold-Trial.woff) format("woff"),
+         url(../assets/fonts/Graphik-Bold-Trial.ttf) format("truetype");
+}
+
+body {
+    background-color: #f1f8fc;
+    font-family: "Graphik", sans-serif !important;
+}
+
+header {
+    input {
+        outline: none;
+        width: 250px;
+    }
+
+    li {
+        color: #384050;
+    }
+
+    li:hover {
+        text-decoration: underline;
+    }
+}
+
+footer {
+    background-color: #0074c7;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    li, address, a {
+        color: #f1f8fc;
+    }
+
+    li:hover, a:hover {
+        text-decoration: underline !important;
+    }
+
+    address {
+        margin-right: 40rem;
+        padding-left: 8rem;
+    }
+}
