@@ -19,7 +19,7 @@ header {
         width: 250px;
     }
 
-    li {
+    a {
         color: #384050;
     }
 
@@ -48,7 +48,7 @@ main {
     button {
         background-color: #0074c7;
         color: #f1f8fc;
-        
+
         &:hover {
             background-color: #00497c;
         }

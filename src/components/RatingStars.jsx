@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faRegStar } from '@fortawesome/free-regular-svg-icons';
 
 const RatingStars = ({ note }) => {
     const totalStars = 5; 
@@ -14,7 +15,7 @@ const RatingStars = ({ note }) => {
             ))}
             {halfStar && <FontAwesomeIcon icon={faStarHalfAlt}/>}
             {[...Array(emptyStars)].map((_, i) => (
-                <FontAwesomeIcon key={`empty-${i}`} icon={faStar}/>
+                <FontAwesomeIcon key={`empty-${i}`} icon={faRegStar}/>
             ))}
         </div>
     );
