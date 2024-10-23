@@ -12,7 +12,7 @@ const HomePage = () => {
     return (
         <main className="py-4">
             <section>
-                <h1 className="ms-5 fw-bold fs-2 mt-1">Comment trouver mon artisan ?</h1>
+                <h1 className="ms-5 fw-bold fs-2">Comment trouver mon artisan ?</h1>
                 <ol className="ms-5 fs-4 fw-bold">
                     <li className='ms-5 mt-3'>Choisir la catégorie d'artisanat dans le menu <img src={topRightArrow} alt='flèche pointant vers le menu' className='ms-2'/></li>
                     <li className='ms-5'>Choisir un artisan <img src={magnifyingGlass} alt="icone loupe" className='ms-2'/></li>
@@ -23,9 +23,9 @@ const HomePage = () => {
 
             <section className='ps-5'>
                 <h2 className='fw-bold'>Artisans du mois :</h2> 
-                <div className="d-flex justify-content-evenly">
+                <div className="row ms-5">
                     {artisansDuMois.map(artisan => (
-                        <div key={artisan.id} className="artisan-card position-relative pt-3 mt-4">
+                        <div key={artisan.id} className="artisan-card position-relative pt-3 mt-4 col-4 ps-5">
                             <div className='top-border position-absolute top-0 ms-1'></div>
                             <h3 className='fw-bold fs-4 ms-1'>{artisan.name}</h3>
                             <RatingStars note={artisan.note}/>
