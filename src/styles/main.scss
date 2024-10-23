@@ -7,11 +7,13 @@
 }
 
 body {
-    background-color: #f1f8fc;
     font-family: "Graphik", sans-serif !important;
+    width: 100%;
 }
 
 header {
+    padding: 0rem 6rem;
+
     input {
         outline: none;
         width: 250px;
@@ -26,11 +28,48 @@ header {
     }
 }
 
+main {
+    background-color: #f1f8fc;
+    min-height: 67vh;
+    padding: 0rem 6rem;
+
+    h1, h2, .stars {
+        color: #00497c;
+    }
+
+    ol, h3 {
+        color: #0074c7;
+    }
+
+    p {
+        color: #384050;
+    }
+
+    button {
+        background-color: #0074c7;
+        color: #f1f8fc;
+        
+        &:hover {
+            background-color: #00497c;
+        }
+    }
+
+    .artisan-card {
+        .top-border {
+            width: 4rem;
+            height: 4px;
+            background-color: #82b864;
+        }
+    
+        &:nth-child(even) .top-border {
+            background-color: #cd2c2e; 
+        }
+    }  
+}
+
 footer {
     background-color: #0074c7;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    padding: 1rem 6rem 0rem 6rem !important;
 
     li, address, a {
         color: #f1f8fc;
@@ -38,10 +77,5 @@ footer {
 
     li:hover, a:hover {
         text-decoration: underline !important;
-    }
-
-    address {
-        margin-right: 40rem;
-        padding-left: 8rem;
     }
 }
