@@ -5,14 +5,15 @@ import message2 from "../assets/images/message2.png";
 import artisans from "../data/artisans.json";
 import RatingStars from '../components/RatingStars';
 import buttonIcon from '../assets/images/button-icon.png';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     const artisansDuMois = artisans.filter(artisan => artisan.top);
 
     return (
         <main className="py-4">
-            <section>
-                <h1 className="ms-5 fw-bold fs-2">Comment trouver mon artisan ?</h1>
+            <section className='ps-5'>
+                <h1 className="fw-bold fs-2">Comment trouver mon artisan ?</h1>
                 <ol className="ms-5 fs-4 fw-bold">
                     <li className='ms-5 mt-3'>Choisir la catégorie d'artisanat dans le menu <img src={topRightArrow} alt='flèche pointant vers le menu' className='ms-2'/></li>
                     <li className='ms-5'>Choisir un artisan <img src={magnifyingGlass} alt="icone loupe" className='ms-2'/></li>
@@ -31,7 +32,9 @@ const HomePage = () => {
                             <RatingStars note={artisan.note}/>
                             <p className='ms-1 mb-1'>{artisan.specialty}</p>
                             <p className='mb-2 ms-1'>{artisan.location}</p>
-                            <button className='px-3 py-1 border-0 rounded-pill'>Voir la fiche  <img src={buttonIcon} alt="icone redirection" className='mb-1'/></button>  {/*Ajouter lien fiche artisan */}
+                            <Link to={`/artisan/${artisan.id}`}>
+                                <button className='px-3 py-1 border-0 rounded-pill'>Voir la fiche  <img src={buttonIcon} alt="icone redirection" className='mb-1'/></button>  
+                            </Link>
                         </div>
                     ))}
                 </div>
