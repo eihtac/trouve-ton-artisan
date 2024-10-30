@@ -1,10 +1,26 @@
 import { useParams } from "react-router-dom";
 import artisans from "../data/artisans.json";
 import emplacement from "../assets/images/emplacement.png";
+import { useRef } from "react";
+import emailjs from "emailjs-com";
 
 const ArtisanDetailPage = () => {
     const { artisanId } = useParams();
     const artisan = artisans.find(artisan => artisan.id === artisanId);
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_sa3gvbu', 'template_qft4fmh', form.current, 'lrISvVA7pACNGcLuR')
+        .then((result) => {
+            alert("Message envoyé avec succès !");
+        }, (error) => {
+            alert("Une erreur est survenue, veuillez réessayer.");
+        });
+
+        e.target.reset();
+    };
 
     return (
         <main className="py-4">
@@ -32,21 +48,21 @@ const ArtisanDetailPage = () => {
 
             <section className="mt-4 ps-5">
                 <h2 className="fw-bold fs-2 mb-3">Contacter l'artisan</h2>
-                <form className="mx-5">
+                <form ref={form} onSubmit={sendEmail} className="mx-5">
                     <div className="row">
                         <div className="mb-3 col-6">
                             <label htmlFor="name" className="form-label">Nom</label>
-                            <input type="text" className="form-control border-2 rounded-pill" id="name" />
+                            <input type="text" name="name" className="form-control border-2 rounded-pill" id="name" required/>
                         </div>
                         <div className="mb-3 col-6">
                             <label htmlFor="subject" className="form-label">Objet</label>
-                            <input type="text" className="form-control border-2 rounded-pill" id="subject" />
+                            <input type="text" name="subject" className="form-control border-2 rounded-pill" id="subject" required/>
                         </div>
                     </div>
                     
                     <div className="mb-3 w-50">
                         <label htmlFor="message" className="form-label">Message</label>
-                        <textarea className="form-control border-2 rounded-4" id="message" rows="5"></textarea>
+                        <textarea name="message" className="form-control border-2 rounded-4" id="message" rows="5" required></textarea>
                     </div>
                     <button type="submit" className="px-3 py-2 border-0 rounded-pill mt-3">Envoyer</button>
                 </form>
