@@ -1,15 +1,15 @@
 const SiteFooter = () => {
     return (
-        <footer className="container-fluid w-100">
-            <div className="row">
-                <ul className="list-unstyled lh-lg col-6">
-                    <li>Mentions légales</li> {/*Ajouter liens */}
+        <footer className="w-100">
+            <div>
+                <ul className="list-unstyled lh-lg">
+                    <li>Mentions légales</li>
                     <li>Données personnelles</li>
                     <li>Accessibilité</li>
                     <li>Cookies</li>
                 </ul>
 
-                <address className="border-start col-6 ps-5">
+                <address>
                     101 cours Charlemagne <br />
                     CS 20033 <br />
                     69269 LYON CEDEX 02 <br />
